@@ -99,18 +99,4 @@ Truck	Car ❌
 * Default: CIFAR-10
 * Supports custom datasets in this format:
 
-#Copy code
-dataset/
-├── class1/
-│   ├── image1.jpg
-│   ├── image2.jpg
-│   └── ...
-├── class2/
-│   └── ...
-# 🤝 Contributing
-* Contributions are welcome! To contribute:
-* Fork the repo
-* Create a new branch (git checkout -b feature-x)
-* Commit your changes
-* Open a pull request
 
