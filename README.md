@@ -1,102 +1,43 @@
-# Image_Classification
- Image Classification using CNN
-This project builds a deep learning image classifier using Convolutional Neural Networks (CNNs). It covers the full workflow from data preprocessing to model evaluation, with visualizations and insights.
+# Image Classification using Convolutional Neural Networks
+This project aims to classify the images in the given dataset as cats or dogs using convolutional neural networks(CNN)
 
-# Features
-CNN-based architecture for image classification
+Approach and pipeline:
+Refer to the report and code for the approach and implementation.
 
-Supports custom or public datasets (e.g., CIFAR-10, MNIST)
+Results:
+Results after training 18,000 images of cats and dogs:
 
-Visual performance metrics (accuracy, loss)
+number of epochs = 15
+training data / validation data split = 80/20
+MODEL
+CONV 3x3 filter layers with batch norm - 32 x 64 x 96 x 96 x 64
+Dense layers with drop out of 0.2 and 0.3 - 256 x 128 x 2
+loss: 0.0638
+accuracy: 0.9759
+val_loss: 0.3255
+val_accuracy: 0.9044
+The model was tested on the images in the test1 folder. The performance of the model was very good and was able to predict the animals with 97-99% accuracy.
 
-Clean, modular codebase
+Plots for model accuracy and loss are following:
 
-Easily extendable for more complex tasks
-
-#🧹 Data Preprocessing
-Before training, the dataset undergoes several preprocessing steps to ensure optimal learning performance:
-
-Resizing: All images are resized to a uniform shape (e.g., 32x32 or 64x64)
-
-Normalization: Pixel values scaled to range [0, 1] or standardized to zero mean and unit variance
-
-One-Hot Encoding: Class labels converted into one-hot vectors (for multi-class classification)
-
-Augmentation (optional):
-
-Random rotation
-
-Horizontal flip
-
-Zoom and shift
-
-Brightness adjustment
-
-Example using Torchvision or Keras ImageDataGenerator for real-time data augmentation.
-
-# 🧪 Model Architecture (Example)
-text
-Copy code
-Input: 32x32x3
-↓
-Conv2D (32 filters) + ReLU
-↓
-MaxPooling2D
-↓
-Conv2D (64 filters) + ReLU
-↓
-MaxPooling2D
-↓
-Flatten
-↓
-Dense (128 units) + ReLU
-↓
-Dropout (0.5)
-↓
-Output Layer (Softmax)
-# 💡 Insights
-🔍 Observations from Training:
-Overfitting started to appear after epoch 15, especially without data augmentation or dropout.
-
-Data augmentation and Dropout (0.5) improved generalization significantly.
-
-Validation accuracy stabilized quickly, suggesting good data balance.
-
-Misclassified images were often visually ambiguous even to humans.
-
-# 📊 Class Imbalance:
-If using a custom dataset, class imbalance can be visualized and addressed with:
-
-Oversampling
-
-Class weighting in loss function
-
-Data augmentation on minority classes
-
-# 🚀 Result
-* Metric	Train	Validation
-* Accuracy	98.7%	92.3%
-* Loss	0.07	0.29
-
-Achieved using CIFAR-10 with data augmentation for 20 epochs and Adam optimizer.
-
-# 📈 Accuracy & Loss Curves
-
-##  🖼️ Example Predictions
-Input Image	True Class	Predicted
-Dog	Dog
-Cat	Cat
-Truck	Car ❌
-
-## 🛠️ Tech Stack
+# Libraries
 * Python 3.8+
 * TensorFlow / PyTorch
 * NumPy, Pandas
 * Matplotlib, Seaborn
-* OpenCV or PIL (for image handling)
+* CNN 
+  
+# Summary
+ Load the CIFAR-10 dataset.
+ Normalize training and test data.
+ Change labels from integer to categorical.
+ Build the model.
+ Compile the model.
+ Train the model.
+ Save the model.
+ Classify new test image using the trained model.
 
-# 📚 Dataset
-* Default: CIFAR-10
+
 * Supports custom datasets in this format:
 
 
